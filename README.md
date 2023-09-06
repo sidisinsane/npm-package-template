@@ -168,7 +168,7 @@ module.exports = {
 
 **Install**
 
-__see: https://prettier.io/docs/en/precommit.html#option-1-lint-stagedhttpsgithubcomokonetlint-staged__
+**see: https://prettier.io/docs/en/precommit.html#option-1-lint-stagedhttpsgithubcomokonetlint-staged**
 
 ```bash
 npx mrm@2 lint-staged
@@ -194,15 +194,6 @@ npx mrm@2 lint-staged
 npx lint-staged
 ```
 
-`.husky/prepare-commit-msg`:
-
-```
-#!/usr/bin/env sh
-. "$(dirname "$0")/_/husky.sh"
-
-exec </dev/tty && npx cz --hook || true
-```
-
 #### Commitizen & semantic-release
 
 **Install**
@@ -215,8 +206,13 @@ pnpm add -D semantic-release conventional-changelog-conventionalcommits
 
 Incorporate Commitizen into the existing git commit workflow.
 
-```bash
-pnpm exec husky add .husky/prepare-commit-msg "exec < /dev/tty && npx cz --hook || true"
+`.husky/prepare-commit-msg`:
+
+```
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+exec </dev/tty && npx cz --hook || true
 ```
 
 **Configure**
